@@ -163,7 +163,7 @@ footer{text-align:center;color:var(--muted);font-size:12px;margin-top:24px}@medi
   <div class="card satu"><h3>🤖 SATU Release Agent</h3><p>ผู้ช่วยตอบคำถามงาน Release โดยใช้ข้อมูล feature, coverage, bug/remark และ project team view</p><div class="satu-item"><b>Project Team Insight</b><br/>ตอบว่า Scrum ไหนถือ scope อะไร และมีงานกระจายตรงไหน</div><div class="satu-item"><b>QA Insight</b><br/>ตอบว่า feature ไหน coverage ต่ำ และ bug อะไรต้องตามก่อน CAT</div></div>
   <div class="card agent"><div class="section-title"><h2 style="color:white">Ask SATU Agent</h2><span style="color:#bfdbfe">Mock Q&A panel</span></div><textarea placeholder="ถาม SATU เช่น Scrum ไหนมีงานเยอะ, งานไหนอยู่ FS-QT, Feature ไหน coverage ต่ำ, bug ไหนต้องตามก่อน CAT..."></textarea><div><span class="prompt">Scrum ไหนมีงานเยอะ?</span><span class="prompt">งานไหนอยู่ FS-FB?</span><span class="prompt">Feature ไหน coverage ต่ำ?</span><span class="prompt">สรุป project team view</span></div></div>
 </section>
-<footer>Mobile Banking Dashboard | Prepared for Release Management / PMO</footer>
+<footer>Mobile Banking Dashboard | Prepared for Release Management / PMO Test</footer>
 </main>
 <script>
 function filterFeature(){const q=(document.getElementById('featureSearch').value||'').toLowerCase();const g=document.getElementById('featureGroup').value;document.querySelectorAll('#featureTable tr[data-group]').forEach(r=>{const okG=!g||r.getAttribute('data-group')===g;const okQ=!q||r.innerText.toLowerCase().includes(q);r.style.display=(okG&&okQ)?'':'none';});}
