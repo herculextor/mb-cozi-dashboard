@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<title>Feature Control Board and Test Progress</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-component-id="feature">
+<section class="section">
+  <div class="section-title"><h2>📋 Feature Control Board + Test Progress</h2><span>ใช้ดู coverage และ bug/remark ราย feature</span></div>
+  <div class="card">
+    <div class="filters"><input id="featureSearch" aria-label="Search feature, bug, scrum" placeholder="Search feature, bug, scrum..." onkeyup="filterFeature()"/><select id="featureGroup" aria-label="Filter by group" onchange="filterFeature()"><option value="">All Groups</option><option value="main">Main Feature</option><option value="functional">Functional Enhancement</option><option value="technical">Technical Enhancement</option></select></div>
+    <div style="overflow:auto">
+      <table id="featureTable">
+        <tr><th>Group</th><th>ADO</th><th>Feature</th><th>Scrum</th><th>Status</th><th>SIT Coverage</th><th>CAT1</th><th>CAT2</th><th>Bug / Remark</th></tr>
+        <tr data-group="main"><td>Main</td><td>170251</td><td>RC: Add Card</td><td>FS-QT</td><td><span class="badge amber">In progress</span></td><td><div class="cov-wrap"><div class="cov-bg"><div class="cov low" style="width:0%"></div></div>0%</div></td><td>Tentative 19-20/08</td><td>No Run</td><td class="bugcell"><b>Bug 173567</b>: OTP Code for Add Revolving Card Flow always displays mock value.</td></tr>
+        <tr data-group="main"><td>Main</td><td>167994</td><td>RC: Activate</td><td>3DEV</td><td><span class="badge amber">In progress</span></td><td><div class="cov-wrap"><div class="cov-bg"><div class="cov mid" style="width:50%"></div></div>50%</div></td><td>Tentative 19-20/08</td><td>No Run</td><td class="bugcell"><b>5 bugs noted</b>: banner, design, email setup and date format.</td></tr>
+        <tr data-group="main"><td>Main</td><td>164906</td><td>RC: View Card</td><td>FS-RR</td><td><span class="badge amber">In progress</span></td><td><div class="cov-wrap"><div class="cov-bg"><div class="cov low" style="width:20%"></div></div>20%</div></td><td>Tentative 19-20/08</td><td>No Run</td><td class="bugcell">Waiting test data from host for transaction detail/statement.</td></tr>
+        <tr data-group="main"><td>Main</td><td>167994</td><td>RC: Loan Repayment</td><td>3DEV</td><td><span class="badge amber">In progress</span></td><td><div class="cov-wrap"><div class="cov-bg"><div class="cov mid" style="width:45%"></div></div>45%</div></td><td>Tentative 21/08</td><td>No Run</td><td class="bugcell"><b>Several bugs</b>; remark: รอ host ส่ง Statement balance.</td></tr>
+        <tr data-group="main"><td>Main</td><td>153477</td><td>App to App Transfer - Facebook</td><td>FS-FB</td><td><span class="badge amber">Dependency</span></td><td><div class="cov-wrap"><div class="cov-bg"><div class="cov low" style="width:0%"></div></div>0%</div></td><td>No Run</td><td>No Run</td><td class="bugcell">รอ Apigee setup; link ยังไม่สมบูรณ์; sync test case.</td></tr>
+        <tr data-group="functional"><td>Functional</td><td>165180</td><td>App-to-App Authentication Service Enhancement</td><td>3DEV</td><td><span class="badge green">Tested</span></td><td><div class="cov-wrap"><div class="cov-bg"><div class="cov high" style="width:100%"></div></div>100%</div></td><td>No Run</td><td>No Run</td><td class="bugcell">Bug notes: 172315, 173209, 172494, 173568.</td></tr>
+        <tr data-group="technical"><td>Technical</td><td>172589</td><td>Dawinium SDK 2.4.0</td><td>FS-RR</td><td><span class="badge gray">FS testing</span></td><td><div class="cov-wrap"><div class="cov-bg"><div class="cov low" style="width:0%"></div></div>0%</div></td><td>Seamless regression</td><td>No Run</td><td class="bugcell">CAT1 seamless regression test mentioned.</td></tr>
+      </table>
+    </div>
+    <div class="note">Data note: Test progress section keeps the v3 concept and summarizes coverage/bug remark for dashboard readability.</div>
+  </div>
+</section>
+<script src="../assets/iframe-bridge.js"></script>
+<script>
+function filterFeature(){const q=(document.getElementById('featureSearch').value||'').toLowerCase();const g=document.getElementById('featureGroup').value;document.querySelectorAll('#featureTable tr[data-group]').forEach(r=>{const okG=!g||r.getAttribute('data-group')===g;const okQ=!q||r.innerText.toLowerCase().includes(q);r.style.display=(okG&&okQ)?'':'none';});}
+</script>
+</body>
+</html>

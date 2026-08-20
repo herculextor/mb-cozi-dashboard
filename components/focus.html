@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<title>Release Focus List</title>
+<link rel="stylesheet" href="../styles.css" />
+</head>
+<body data-component-id="focus">
+<section class="section">
+  <div class="section-title"><h2>🔥 Release Focus List from Standup</h2><span>Concern ที่ต้องตามใน Release</span></div>
+  <div class="focus-grid">
+    <div class="card focus critical"><h3>🔴 Revolving Card</h3><span class="badge red">Test Progress + Bugs</span><ul><li>หลาย flow มี coverage ต่ำหรือยังไม่เริ่ม test</li><li>RC Activate / Loan Repayment / Suspend มี bug/remark ต้องตาม</li></ul></div>
+    <div class="card focus"><h3>🟡 App2App Facebook</h3><span class="badge amber">External Dependency</span><ul><li>รอ Apigee setup / link ยังไม่สมบูรณ์</li><li>ต้อง sync test case และ confirm environment</li></ul></div>
+    <div class="card focus critical"><h3>🔴 Technical Foundation</h3><span class="badge amber">Evidence Required</span><ul><li>Redis / Redhat / .NET ยังต้องตาม rollback evidence</li><li>ต้องเตรียม supporting evidence ก่อน CAB</li></ul></div>
+  </div>
+</section>
+<script src="../assets/iframe-bridge.js"></script>
+</body>
+</html>
